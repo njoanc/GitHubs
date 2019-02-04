@@ -6,11 +6,15 @@ import { RepositoryService } from './repository.service';
 import { AppComponent } from './app.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { RepositoryFormComponent } from './repository-form/repository-form.component';
-import { AboutComponent } from './about/about.component';
-
+import { RouterModule, Routes } from '@angular/router';
+//Defining routes
+const routes: Routes = [
+	// {path:"goals",component:AppComponent},
+	// {path:"about",component:AboutComponent}
+];
 @NgModule({
-	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent, AboutComponent ],
-	imports: [ BrowserModule, HttpClientModule ],
+	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent ],
+	imports: [ BrowserModule, HttpClientModule, RouterModule.forRoot(routes) ],
 	providers: [ RepositoryService ],
 	bootstrap: [ AppComponent ]
 })
