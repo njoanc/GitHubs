@@ -1,7 +1,7 @@
-<form>
+<form id="form-id">
   <div class="form-group">
     <label for="name"><strong>Username:</strong></label>
     <input type="text" class="form-control" (keyup)='submitSearch($event)'>
   </div>
-  <button type="submit" class="btn btn-primary">Search</button>
+  <a href="#" onclick="document.getElementById('form-id').submit();"> Submit </a>
 </form>
