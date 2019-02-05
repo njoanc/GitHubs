@@ -4,7 +4,8 @@ import { RepositoryService } from '../repository.service';
 @Component({
 	selector: 'app-repository-form',
 	templateUrl: './repository-form.component.html',
-	styleUrls: [ './repository-form.component.css' ]
+	styleUrls: [ './repository-form.component.css' ],
+	providers: [ RepositoryService ]
 })
 export class RepositoryFormComponent implements OnInit {
 	submitSearch(name) {

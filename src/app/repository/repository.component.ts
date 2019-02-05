@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { RepositoryService } from '../repository.service';
-import { User } from '../user';
+import { Repo } from '../repo';
 
 @Component({
 	selector: 'app-repository',
 	templateUrl: './repository.component.html',
-	styleUrls: [ './repository.component.css' ],
-	providers: [ RepositoryService ]
+	providers: [ RepositoryService ],
+	styleUrls: [ './repository.component.css' ]
 })
 export class RepositoryComponent implements OnInit {
-	user: User;
+	repo: Repo;
 
-	constructor(private repositoryService: 'RepositoryService', public repoService: 'RepositoryService') {
-		//  this.user = this.repositoryService.user;...work of tomorrow start on this
+	constructor(private repositoryService: RepositoryService) {
+		this.repo = this.repositoryService.repo;
 	}
 	ngOnInit() {
-		// this.user = this.repositoryService.user;
+		// this.repo = this.repositoryService.repo;
 	}
 }
