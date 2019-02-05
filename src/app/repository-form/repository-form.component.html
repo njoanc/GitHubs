@@ -1,9 +1,10 @@
-<form id="form-id">
+<form id="form-id" (ngSubmit)='submitSearch()'>
   <div class="form-group">
-    <!-- <label for="name"><strong>Username:</strong></label> -->
-    <input type="text" class="form-control" (keyup)='submitSearch($event)'>
+    <label for="name"><strong>Username:</strong></label>
+    <input type="text" class="form-control" [(ngModel)]="Name.name" name="name">
   </div>
-  <a href="#" onclick="document.getElementById('form-id').submit();"> Submit </a>
+  <button type="submit">Submit</button>
+  <!-- <a href="#"> Submit </a> -->
 </form>
-<a href="{{repos.html_url}}" class="btn btn-success" id="view">Link to User Account</a>
-<p>{{repos.public_repos}}</p>
+<!-- <a href="{{repo.name}}" class="btn btn-success" id="view">Link to User Account</a> -->
+<!-- <p>{{repos.public_users}}</p> -->

@@ -9,9 +9,13 @@ import { checkAndUpdatePureExpressionDynamic } from '@angular/core/src/view/pure
 	styleUrls: [ './repository-form.component.css' ]
 })
 export class RepositoryFormComponent implements OnInit {
+	Name = {
+		name: ''
+	};
 	submitSearch(name) {
-		this.repositoryService.getRepositoryInfo(name.target.value);
-		this.repoService.getRepoInfo(name.target.value);
+		console.log(this.Name);
+		this.repositoryService.getRepositoryInfo(this.Name.name);
+		this.repoService.getRepoInfo(this.Name.name);
 	}
 	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {}
 	ngOnInit() {}
