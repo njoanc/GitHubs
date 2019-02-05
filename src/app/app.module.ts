@@ -12,11 +12,14 @@ import { RouterModule, Routes } from '@angular/router';
 // import { AboutComponent } from './about/about.component';
 // import { from } from 'rxjs';
 // Defining routes
-// const routes: Routes = [
-// 	{ path: 'users',
-// 	component: RepositoryComponent }
-// 	// {path:"about",component:AboutComponent}
-// ];
+const routes: Routes = [
+	{
+		path: 'users',
+		component: RepositoryComponent
+	},
+	{ path: '', redirectTo: '/users', pathMatch: 'full' },
+	{ path: '**', component: NotFoundComponent }
+];
 @NgModule({
 	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent, NotFoundComponent ],
 	imports: [

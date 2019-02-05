@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'https://api.github.com/users/njoanc?access_token=',
+	apiUrl: 'https://api.github.com/users/',
 	apikey: '29e8323f371b96735aa40af4462087408d5dfef'
 };
 
