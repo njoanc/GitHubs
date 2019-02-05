@@ -4,9 +4,8 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'https://api.github.com/users/',
+	apiUrl: 'https://api.github.com/users/njoanc?access_token=',
 	apikey: '29e8323f371b96735aa40af4462087408d5dfef'
-	// apiRepokey: '229e8323f371b96735aa40af4462087408d5dfef'
 };
 
 /*
