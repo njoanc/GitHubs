@@ -46,10 +46,13 @@ export class RepositoryService {
 	getRepoInfo(username) {
 		interface ApiResponse {
 			name: string;
-			homepage: string;
-			description: string;
+			login: string;
+			avatar_url: string;
+			email: string;
+			location: string;
+			public_repos: number;
 			html_url: string;
-			clone_url: string;
+			created_at: Date;
 		}
 
 		this.http
