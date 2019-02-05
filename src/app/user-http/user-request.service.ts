@@ -9,7 +9,7 @@ import { User } from '../user-class/user';
 export class UserRequestService {
 	user: User;
 	constructor(private http: HttpClient) {
-		this.user = new User('', '', '', '', '', '');
+		this.user = new User('', '', '', '', '', new Date());
 	}
 	userRequest() {
 		interface ApiResponse {

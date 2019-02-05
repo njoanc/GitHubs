@@ -3,7 +3,7 @@ import { RepositoryService } from '../repository.service';
 import { Repo } from '../repo';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user-class/user';
-import { UserRequestService } from '../../user-request.service';
+// import { UserRequestService } from '../../user-request.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class RepositoryComponent implements OnInit {
 	repo: Repo;
-	user: User;
+	user: any;
 
 	constructor(private repositoryService: RepositoryService, private http: HttpClient) {
 		this.repo = this.repositoryService.repo;
@@ -29,14 +29,14 @@ export class RepositoryComponent implements OnInit {
 			homepage: string;
 			created_at: Date;
 		}
-		this.http.get('https://api.github.com/users/njoanc?access_token').subscribe((data) => {
+		this.http.get('https://api.github.com/users/njoanc?access_token').subscribe((data: any) => {
 			this.user = new User(
 				data.name,
 				data.description,
 				data.html_url,
 				data.clone_url,
 				data.homepage,
-				data.created_at | UpperCase
+				data.created_at
 			);
 		});
 	}
