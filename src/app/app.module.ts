@@ -6,10 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { RepositoryFormComponent } from './repository-form/repository-form.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 // import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
-	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent ],
+	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent, NotFoundComponent ],
 	imports: [ BrowserModule, HttpClientModule ],
 	// providers: [ RepositoryService ],
 	bootstrap: [ AppComponent ]

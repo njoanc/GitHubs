@@ -1,23 +1,20 @@
 <div class="container">
   <div class="jumbotron">
     <h1>GitHub Search</h1>
+    <app-repository-form></app-repository-form>
   </div>
   <div class="row">
     <div class="col-md-10">
-      <app-repository-form></app-repository-form>
-      <!-- <a href="{{user.html_url}}" class="btn btn-success" id="view">Search</a> -->
-    </div>
-    <div class="col-md-2">
-      <table>
-        <tr>
-          <td>Github username: </td>
-          <!-- <td class="label">{{user.login}}</td> -->
-        </tr>
-        <tr>
-          <td>Repositories: </td>
-          <!-- <td class="label">{{user.public_repos}}</td> -->
-        </tr>
-      </table>
+      <div class="container">
+
+        <div class="row">
+          <blockquote class="text-center text-lg">
+            <p>{{user.user}}</p>
+            <footer><cite>{{user.username}}</cite></footer>
+          </blockquote>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
