@@ -32,7 +32,7 @@ export class RepositoryService {
 		}
 		const promise = new Promise((resolve, reject) => {
 			this.http
-				.get<ApiResponse>(environment.apiUrl + username + environment.apikey)
+				.get<ApiResponse>('https://api.github.com/users/' + username + '?success_token=' + environment.apikey)
 				.toPromise()
 				.then((repository) => {
 					this.username = repository.name;
@@ -51,8 +51,11 @@ export class RepositoryService {
 			html_url: string;
 			clone_url: string;
 		}
-		this.http.get<ApiResponse>(environment.apiUrl + username).subscribe((response) => {
-			this.items = response;
-		});
+
+		this.http
+			.get<ApiResponse>('https://api.github.com/users/' + username + '?success_token=' + environment.apikey)
+			.subscribe((response) => {
+				this.items = response;
+			});
 	}
 }

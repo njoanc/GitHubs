@@ -17,6 +17,8 @@ export class RepositoryFormComponent implements OnInit {
 		this.repositoryService.getRepositoryInfo(this.Name.name);
 		this.repoService.getRepoInfo(this.Name.name);
 	}
-	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {}
+	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {
+		console.log(repoService);
+	}
 	ngOnInit() {}
 }

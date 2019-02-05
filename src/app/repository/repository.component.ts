@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../user-class/user';
 // import { UserRequestService } from '../../user-request.service';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
 	selector: 'app-repository',
@@ -29,15 +30,17 @@ export class RepositoryComponent implements OnInit {
 			homepage: string;
 			created_at: Date;
 		}
-		this.http.get('https://api.github.com/users/njoanc?access_token').subscribe((data: any) => {
-			this.user = new User(
-				data.name,
-				data.description,
-				data.html_url,
-				data.clone_url,
-				data.homepage,
-				data.created_at
-			);
-		});
+		this.http
+			.get('https://api.github.com/users/bazimya?success_token=' + environment.apikey)
+			.subscribe((data: any) => {
+				this.user = new User(
+					data.name,
+					data.description,
+					data.html_url,
+					data.clone_url,
+					data.homepage,
+					data.created_at
+				);
+			});
 	}
 }
