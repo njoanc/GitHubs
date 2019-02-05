@@ -3,9 +3,8 @@ import { RepositoryService } from '../repository.service';
 import { Repo } from '../repo';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user-class/user';
-import { UpperCasePipe } from '@angular/common';
-import { AlertsService } from '../alert-service/alerts.service';
 import { UserRequestService } from '../../user-request.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-repository',
@@ -19,7 +18,7 @@ export class RepositoryComponent implements OnInit {
 
 	constructor(private repositoryService: RepositoryService, private http: HttpClient) {
 		this.repo = this.repositoryService.repo;
-		this.users = userService.getUsers();
+		this.user = this.repositoryService.user;
 	}
 	ngOnInit() {
 		interface ApiResponse {

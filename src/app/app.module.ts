@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-// import { RepositoryService } from './repository.service';
+import { RoutingModule } from './routing/routing.module';
 
 import { AppComponent } from './app.component';
 import { RepositoryComponent } from './repository/repository.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 @NgModule({
 	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent, NotFoundComponent ],
-	imports: [ BrowserModule, HttpClientModule, RouterModule.forRoot(routes) ],
+	imports: [ BrowserModule, HttpClientModule, RoutingModule, RouterModule.forRoot(routes) ],
 	// providers: [ RepositoryService ],
 	bootstrap: [ AppComponent ]
 })

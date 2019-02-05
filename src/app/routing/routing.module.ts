@@ -11,6 +11,7 @@ const routes: Routes = [
 	{ path: 'users', component: RepositoryComponent },
 	{ path: 'about', component: AboutComponent },
 	{ path: '', redirectTo: '/users', pathMatch: 'full' },
+	{ path: 'users/:id', component: RepositoryComponent },
 	{ path: '**', component: NotFoundComponent }
 ];
 

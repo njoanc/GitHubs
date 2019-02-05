@@ -9,7 +9,7 @@ import { User } from '../user-class/user';
 export class UserRequestService {
 	user: User;
 	constructor(private http: HttpClient) {
-		this.user = new User('', '', '', '', '', 'Date');
+		this.user = new User('', '', '', '', '', '');
 	}
 	userRequest() {
 		interface ApiResponse {
@@ -23,7 +23,7 @@ export class UserRequestService {
 		let promise = new Promise((resolve, reject) => {
 			this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(
 				(response) => {
-					this.user.name = response.username.this.user.description = response.description;
+					this.user.name = response.name;
 					this.user.description = response.description;
 					this.user.html_url = response.html_url;
 					this.user.clone_url = response.clone_url;
@@ -38,7 +38,7 @@ export class UserRequestService {
 					this.user.html_url;
 					this.user.clone_url = '';
 					this.user.homepage = '';
-					this.user.created_at = 'new Date';
+					this.user.created_at = new Date();
 					reject(error);
 				}
 			);
