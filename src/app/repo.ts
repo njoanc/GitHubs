@@ -1,10 +1,12 @@
 export class Repo {
 	constructor(
 		public name: string,
-		public description: string,
+		public login: string,
+		public avatar_url: string,
+		public email: string,
+		public location: string,
+		public public_repos: number,
 		public html_url: string,
-		public clone_url: string,
-		public homepage: string,
-		public created_at: Date
+		public created_at
 	) {}
 }

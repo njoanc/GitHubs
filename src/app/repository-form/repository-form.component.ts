@@ -15,7 +15,7 @@ export class RepositoryFormComponent implements OnInit {
 	submitSearch(name) {
 		console.log(this.Name);
 		this.repositoryService.getRepositoryInfo(this.Name.name);
-		this.repoService.getRepoInfo(this.Name.name);
+		// this.repoService.getRepoInfo(this.Name.name);
 	}
 	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {
 		console.log(repoService);
