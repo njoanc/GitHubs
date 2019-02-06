@@ -23,7 +23,7 @@ export class UserRequestService {
 		let promise = new Promise((resolve, reject) => {
 			this.http
 				.get<ApiResponse>(
-					'https://api.github.com/users/' + +'?access_token=1945008b9bf8906de3636e18fdcd2dfe9d656b84'
+					'https://api.github.com/users/' + +'?access_token=4e506891c065d69bf641bbe51727e32d407658e2'
 				)
 				.toPromise()
 				.then(
