@@ -34,6 +34,7 @@ Angularjs, HTML and CSS
 ## Installation
 * Make sure you have all the Requirements or running angular apps installed such as node,npm, tsc and watchman
 * Run ng serve. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+* Github and run https://njoanc.github.io/GitHubs/
 
 ## User Requirements
 This application helps the user to:
