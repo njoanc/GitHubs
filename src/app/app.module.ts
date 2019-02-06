@@ -10,7 +10,7 @@ import { RepositoryFormComponent } from './repository-form/repository-form.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DateCountPipe } from './date-count.pipe';
-// import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './about/about.component';
 // import { from } from 'rxjs';
 // Defining routes
 const routes: Routes = [
@@ -22,7 +22,14 @@ const routes: Routes = [
 	{ path: '**', component: NotFoundComponent }
 ];
 @NgModule({
-	declarations: [ AppComponent, RepositoryComponent, RepositoryFormComponent, NotFoundComponent, DateCountPipe ],
+	declarations: [
+		AppComponent,
+		RepositoryComponent,
+		AboutComponent,
+		RepositoryFormComponent,
+		NotFoundComponent,
+		DateCountPipe
+	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,

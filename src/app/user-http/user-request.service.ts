@@ -21,27 +21,32 @@ export class UserRequestService {
 			created_at: Date;
 		}
 		let promise = new Promise((resolve, reject) => {
-			this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(
-				(response) => {
-					this.user.name = response.name;
-					this.user.description = response.description;
-					this.user.html_url = response.html_url;
-					this.user.clone_url = response.clone_url;
-					this.user.homepage = response.homepage;
-					this.user.created_at = response.created_at;
+			this.http
+				.get<ApiResponse>(
+					'https://api.github.com/users/' + +'?access_token=1945008b9bf8906de3636e18fdcd2dfe9d656b84'
+				)
+				.toPromise()
+				.then(
+					(response) => {
+						this.user.name = response.name;
+						this.user.description = response.description;
+						this.user.html_url = response.html_url;
+						this.user.clone_url = response.clone_url;
+						this.user.homepage = response.homepage;
+						this.user.created_at = response.created_at;
 
-					resolve();
-				},
-				(error) => {
-					this.user.name = '';
-					this.user.description = '';
-					this.user.html_url;
-					this.user.clone_url = '';
-					this.user.homepage = '';
-					this.user.created_at = new Date();
-					reject(error);
-				}
-			);
+						resolve();
+					},
+					(error) => {
+						this.user.name = '';
+						this.user.description = '';
+						this.user.html_url;
+						this.user.clone_url = '';
+						this.user.homepage = '';
+						this.user.created_at = new Date();
+						reject(error);
+					}
+				);
 		});
 
 		return promise;
