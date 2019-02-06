@@ -35,7 +35,7 @@ export class RepositoryService {
 				.get<ApiResponse>(
 					'https://api.github.com/users/' +
 						username +
-						'?access_token=1945008b9bf8906de3636e18fdcd2dfe9d656b84'
+						'?access_token=4e506891c065d69bf641bbe51727e32d407658e2'
 				)
 				.toPromise()
 				.then((repository) => {
@@ -67,7 +67,7 @@ export class RepositoryService {
 		}
 		this.http
 			.get<ApiResponse>(
-				'https://api.github.com/users/' + username + '?access_token=1945008b9bf8906de3636e18fdcd2dfe9d656b84'
+				'https://api.github.com/users/' + username + '?access_token=4e506891c065d69bf641bbe51727e32d407658e2'
 			)
 			.subscribe((response) => {
 				this.items = response;
