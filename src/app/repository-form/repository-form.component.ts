@@ -1,17 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { RepositoryService } from '../repository.service';
+import { UpperCasePipe } from '@angular/common';
+import { checkAndUpdatePureExpressionDynamic } from '@angular/core/src/view/pure_expression';
 
 @Component({
 	selector: 'app-repository-form',
 	templateUrl: './repository-form.component.html',
-	styleUrls: [ './repository-form.component.css' ],
-	providers: [ RepositoryService ]
+	styleUrls: [ './repository-form.component.css' ]
 })
 export class RepositoryFormComponent implements OnInit {
+	Name = {
+		name: ''
+	};
 	submitSearch(name) {
-		this.repositoryService.getRepositoryInfo(name.target.value);
-		this.repoService.getRepoInfo(name.target.value);
+		console.log(this.Name);
+		this.repositoryService.getRepositoryInfo(this.Name.name);
+		// this.repoService.getRepoInfo(this.Name.name);
 	}
-	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {}
+	constructor(private repositoryService: RepositoryService, private repoService: RepositoryService) {
+		console.log(repoService);
+	}
 	ngOnInit() {}
 }

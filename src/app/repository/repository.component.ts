@@ -15,6 +15,6 @@ export class RepositoryComponent implements OnInit {
 		this.repo = this.repositoryService.repo;
 	}
 	ngOnInit() {
-		// this.repo = this.repositoryService.repo;
+		console.log(this.repo);
 	}
 }

@@ -1,23 +1,26 @@
 <div class="container">
   <div class="jumbotron">
     <h1>GitHub Search</h1>
+    <app-repository-form></app-repository-form>
   </div>
   <div class="row">
     <div class="col-md-10">
-      <app-repository-form></app-repository-form>
-      <!-- <a href="{{user.html_url}}" class="btn btn-success" id="view">Search</a> -->
-    </div>
-    <div class="col-md-2">
-      <table>
-        <tr>
-          <td>Github username: </td>
-          <!-- <td class="label">{{user.login}}</td> -->
-        </tr>
-        <tr>
-          <td>Repositories: </td>
-          <!-- <td class="label">{{user.public_repos}}</td> -->
-        </tr>
-      </table>
+      <div class="container">
+
+        <div class="row">
+          <blockquote class="text-center text-lg">
+            <!-- <p><strong>Name:</strong>{{repo.name}}</p><br> -->
+            <p><strong>Username</strong>:{{repo.login}}</p><br>
+            <p><strong>Avatar Url</strong>:{{repo.avatar_url}}</p><br>
+            <!-- <p><strong>Email:</strong> {{repo.email}}</p><br> -->
+            <!-- <p><strong>Location:</strong> {{repo.location}}</p><br> -->
+            <p><strong>Repository:</strong> {{repo.public_repos}}</p><br>
+            <p><strong>html Url: </strong>{{repo.html_url}}</p><br>
+            <p><strong>Date: </strong>{{repo.created_at}}</p><br>
+          </blockquote>
+        </div>
+        <a href="{{repo.html_url}}">Link to Github</a>
+      </div>
     </div>
   </div>
 </div>

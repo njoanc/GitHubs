@@ -16,8 +16,8 @@ export class RepositoryService {
 	constructor(private http: HttpClient) {
 		console.log('service is now ready!');
 		// this.username = 'njoanc';
-		this.user = new User(' ', ' ', ' ', ' ', ' ', 0, ' ');
-		this.repo = new Repo(' ', ' ', ' ', ' ', ' ');
+		this.user = new User(' ');
+		this.repo = new Repo(' ', ' ', ' ', '', ' ', 0, ' ', new Date());
 	}
 	getRepositoryInfo(username) {
 		interface ApiResponse {
@@ -28,18 +28,20 @@ export class RepositoryService {
 			location: string;
 			public_repos: number;
 			html_url: string;
+			created_at: Date;
 		}
 		const promise = new Promise((resolve, reject) => {
 			this.http.get<ApiResponse>(environment.apiUrl + username).toPromise().then((repository) => {
-				this.user.name = repository.name;
-				this.user.login = repository.login;
-				this.user.avatar_url = repository.avatar_url;
-				this.user.email = repository.email;
-				this.user.location = repository.location;
-				this.user.public_repos = repository.public_repos;
-				this.user.html_url = repository.html_url;
+				this.repo.name = repository.name;
+				this.repo.login = repository.login;
+				this.repo.avatar_url = repository.avatar_url;
+				this.repo.email = repository.email;
+				this.repo.location = repository.location;
+				this.repo.public_repos = repository.public_repos;
+				this.repo.html_url = repository.html_url;
+				this.repo.created_at = repository.created_at;
 
-				console.log(repository);
+				// console.log(this.repo);
 				resolve();
 			});
 		});
@@ -48,10 +50,13 @@ export class RepositoryService {
 	getRepoInfo(username) {
 		interface ApiResponse {
 			name: string;
-			homepage: string;
-			description: string;
+			login: string;
+			avatar_url: string;
+			email: string;
+			location: string;
+			public_repos: number;
 			html_url: string;
-			clone_url: string;
+			created_at: Date;
 		}
 		this.http.get<ApiResponse>(environment.apiUrl + username + environment.apikey).subscribe((response) => {
 			this.items = response;
