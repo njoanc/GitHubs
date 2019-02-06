@@ -8,16 +8,18 @@
       <div class="container">
 
         <div class="row">
-          <blockquote class="text-center text-lg">
-            <!-- <p><strong>Name:</strong>{{repo.name}}</p><br> -->
-            <p><strong>Username</strong>:{{repo.login}}</p><br>
-            <p><strong>Avatar Url</strong>:{{repo.avatar_url}}</p><br>
-            <!-- <p><strong>Email:</strong> {{repo.email}}</p><br> -->
-            <!-- <p><strong>Location:</strong> {{repo.location}}</p><br> -->
-            <p><strong>Repository:</strong> {{repo.public_repos}}</p><br>
-            <p><strong>html Url: </strong>{{repo.html_url}}</p><br>
-            <p><strong>Date: </strong>{{repo.created_at}}</p><br>
-          </blockquote>
+          <!-- <blockquote class="text-lg"> -->
+          <img src="{{repo.avatar_url}}" width="150px" height="150px">
+          <!-- <p><strong>Name:</strong>{{repo.name}}</p><br> -->
+          <p><strong>Username</strong>:{{repo.login}}</p><br>
+
+          <p><strong>Avatar Url</strong>:{{repo.avatar_url}}</p><br>
+          <!-- <p><strong>Email:</strong> {{repo.email}}</p><br>
+            <p><strong>Location:</strong> {{repo.location}}</p><br> -->
+          <p><strong>Repository:</strong> {{repo.public_repos}}</p><br>
+          <p><strong>html Url: </strong>{{repo.html_url}}</p><br>
+          <p><strong>Date: </strong>{{repo.created_at}}</p><br>
+          <!-- </blockquote> -->
         </div>
         <a href="{{repo.html_url}}">Link to Github</a>
       </div>
